@@ -1,14 +1,18 @@
 $( document ).ready(function() {
-	$.getJSON("http://quotes.stormconsultancy.co.uk/random.json?callback=?", function(a) {
-	  $(".quote-content").append(a.quote);
-	  $(".quote-author").append(a.author);
-	});
+
+	function showRandomQuote(json){
+		$(".quote-content").append(json.quote);
+	  $(".quote-author").append(json.author);
+	  console.log(json);
+	}
+	
+
 	$('#showQuote').click(function(){
-	  $(".quote-content").empty();
-	  $(".quote-author").empty();
-	  $.getJSON("http://quotes.stormconsultancy.co.uk/random.json?callback=?", function(a) {
-		  $(".quote-content").append(a.quote);
-		  $(".quote-author").append(a.author);
+	  $.ajax({
+		  url: "http://quotes.stormconsultancy.co.uk/random.json",
+		  dataType: "jsonp",
+		  jsonpCallback: "showRandomQuote",
+		  cashe: false
 		});
 	});
 });
