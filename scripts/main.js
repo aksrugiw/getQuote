@@ -1,18 +1,38 @@
 $( document ).ready(function() {
 
-	function showRandomQuote(json){
-		$(".quote-content").append(json.quote);
-	  $(".quote-author").append(json.author);
-	  console.log(json);
-	}
-	
-
 	$('#showQuote').click(function(){
-	  $.ajax({
-		  url: "http://quotes.stormconsultancy.co.uk/random.json",
-		  dataType: "jsonp",
-		  jsonpCallback: "showRandomQuote",
-		  cashe: false
+		$(".quote-content").empty();
+		$(".quote-author").empty();
+		$.ajax({
+		    url: 'https://andruxnet-random-famous-quotes.p.mashape.com/',
+		    type: 'GET', // The HTTP Method
+		    datatype: 'json',
+		    cache: false,
+		    success: function(data) { 
+		    	var json = JSON.parse(data);
+		    	$(".quote-content").append(json.quote);
+				$(".quote-author").append(json.author);
+		    },
+		    error: function(err) { alert(err); },
+		    beforeSend: function(xhr) {
+		    xhr.setRequestHeader("X-Mashape-Authorization", "sZYuSJCwLBmshotkB5Hy6NDNIxMQp1D7WmjjsnUb0PYZLkpVhf"); // Enter here your Mashape key
+		    }
 		});
 	});
+
+	$.ajax({
+	    url: 'https://andruxnet-random-famous-quotes.p.mashape.com/',
+	    type: 'GET', // The HTTP Method
+	    datatype: 'json',
+	    success: function(data) { 
+	    	var json = JSON.parse(data);
+	    	$(".quote-content").append(json.quote);
+	  $(".quote-author").append(json.author);
+	    },
+	    error: function(err) { alert(err); },
+	    beforeSend: function(xhr) {
+	    xhr.setRequestHeader("X-Mashape-Authorization", "sZYuSJCwLBmshotkB5Hy6NDNIxMQp1D7WmjjsnUb0PYZLkpVhf"); // Enter here your Mashape key
+	    }
+	});
+
 });
