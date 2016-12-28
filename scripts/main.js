@@ -47,33 +47,37 @@ $( document ).ready(function() {
 	$('#showQuote').click(function(){
 		$(".quote-content").empty();
 		$(".quote-author").empty();
+		var randomColor = Math.floor((Math.random() * colors.length));
+
+		$('body').css('background-color', colors[randomColor].body).hide().fadeIn(999);
+		$('.well').css('background-color', colors[randomColor].well).hide().fadeIn(999);
+		$('.show-quote').css('border-color', colors[randomColor].well);
+		$('.show-quote').css('color', colors[randomColor].well);
+
+		var randomIcon = Math.floor((Math.random() * icons.length));
+
+		$('.icon-quote').attr('src', 'assets/icons/' + icons[randomIcon]).hide().fadeIn(1999);
+
+
+		$('.icon-quote').attr('alt', icons[randomIcon]);
+
 		$.ajax({
 		    url: 'https://andruxnet-random-famous-quotes.p.mashape.com/',
 		    type: 'GET', // The HTTP Method
 		    datatype: 'json',
 		    cache: false,
 		    success: function(data) { 
+		    	
+
 		    	var json = JSON.parse(data);
-		    	$(".quote-content").append(json.quote);
-				$(".quote-author").append(json.author);
+		    	$(".quote-content").append(json.quote).hide().fadeIn(999);
+				$(".quote-author").append(json.author).hide().fadeIn(999);
 				var randomQuote = $(".quote-content").text();
 				var randomAuthor = $(".quote-author").text();
 				var urlForTweet = 'https://twitter.com/intent/tweet?hashtags=quotes&text=' + '\"' + encodeURIComponent(randomQuote + '\" ~ ' + randomAuthor);
 				$('.twitter-share-button').attr("href", urlForTweet);
 
-				var randomColor = Math.floor((Math.random() * colors.length));
-
-				$('body').css('background-color', colors[randomColor].body);
-				$('.well').css('background-color', colors[randomColor].well);
-				$('.show-quote').css('border-color', colors[randomColor].well);
-				$('.show-quote').css('color', colors[randomColor].well);
-
-				var randomIcon = Math.floor((Math.random() * icons.length));
-
-				$('.icon-quote').attr('src', 'assets/icons/' + icons[randomIcon]);
-
-
-				$('.icon-quote').attr('alt', icons[randomIcon]);
+				
 
 		    },
 		    error: function(err) { alert(err); },
@@ -88,8 +92,8 @@ $( document ).ready(function() {
 	    datatype: 'json',
 	    success: function(data) { 
 	    	var json = JSON.parse(data);
-	    	$(".quote-content").append(json.quote);
-			$(".quote-author").append(json.author);
+	    	$(".quote-content").append(json.quote).hide().fadeIn(999);;
+			$(".quote-author").append(json.author).hide().fadeIn(999);;
 			var randomQuote = $(".quote-content").text();
 			var randomAuthor = $(".quote-author").text();
 			var urlForTweet = 'https://twitter.com/intent/tweet?hashtags=quotes&text=' + '\"' + encodeURIComponent(randomQuote + '\" ~ ' + randomAuthor);
@@ -97,14 +101,14 @@ $( document ).ready(function() {
 
 			var randomColor = Math.floor((Math.random() * colors.length));
 
-			$('body').css('background-color', colors[randomColor].body);
-			$('.well').css('background-color', colors[randomColor].well);
+			$('body').css('background-color', colors[randomColor].body).hide().fadeIn(999);;
+			$('.well').css('background-color', colors[randomColor].well).hide().fadeIn(999);;
 			$('.show-quote').css('border-color', colors[randomColor].well);
 			$('.show-quote').css('color', colors[randomColor].well);
 
 			var randomIcon = Math.floor((Math.random() * icons.length));
 
-			$('.icon-quote').attr('src', 'assets/icons/' + icons[randomIcon]);
+			$('.icon-quote').attr('src', 'assets/icons/' + icons[randomIcon]).hide().fadeIn(1999);;
 
 			$('.icon-quote').attr('alt', icons[randomIcon]);
 
