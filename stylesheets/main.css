@@ -43,13 +43,29 @@ blockquote footer:before {
     margin: 10px auto 30px;
 }
 
+.btn {
+	font-size: 14px;
+	line-height: 1.471;
+	border-radius: 6px;
+}
+
 .show-quote {
-	padding: 10px 19px;
-    font-size: 14px;
-    line-height: 1.471;
     border: 3px solid #4F754E;
-    border-radius: 6px;
     background-color: transparent;
     color: #4F754E;
+    padding: 10px 19px;
+}
 
+.twitter-share-button {
+    background-color: #3891EA;
+    color: #fff;
+    border-radius: 6px;
+    padding: 7px;
+
+}
+
+.twitter-share-button img {
+	width: 20px;
+    background-color: #3891EA;
+    color: #fff;
 }
