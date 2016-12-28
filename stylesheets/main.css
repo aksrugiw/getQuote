@@ -73,3 +73,9 @@ blockquote footer:before {
     background-color: #3891EA;
     color: #fff;
 }
+
+.site-footer {
+    padding-top: 40px;
+    margin-top: 40px;
+    border-top: solid 1px rgba(0,0,0,.15);
+}
