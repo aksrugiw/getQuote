@@ -7,10 +7,14 @@ body {
 }
 
 .main-content {
-	padding: 60px 15px;
+	padding: 40px 15px;
 }
 
-h1 {
+.title-section {
+	margin: 0 auto 40px;
+}
+
+.title-section h1 {
 	font-family: 'Playfair Display';
 }
 
