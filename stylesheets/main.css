@@ -2,6 +2,8 @@
 
 body {
 	background-color: #7FB57E;
+	font-family: 'Open Sans';
+
 }
 
 .main-content {
@@ -15,10 +17,10 @@ h1 {
 .well {
 	background-color: #4F754E;
 	border: none;
+    border-radius: 6px;
 }
 
 .well blockquote {
-	font-family: 'Open Sans';
 	color: #fff;
     border: none;
     text-align: center;
@@ -39,4 +41,15 @@ blockquote footer:before {
 
 .icon-quote {
     margin: 10px auto 30px;
+}
+
+.show-quote {
+	padding: 10px 19px;
+    font-size: 14px;
+    line-height: 1.471;
+    border: 3px solid #4F754E;
+    border-radius: 6px;
+    background-color: transparent;
+    color: #4F754E;
+
 }

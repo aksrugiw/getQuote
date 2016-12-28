@@ -65,6 +65,8 @@ $( document ).ready(function() {
 
 				$('body').css('background-color', colors[randomColor].body);
 				$('.well').css('background-color', colors[randomColor].well);
+				$('.show-quote').css('border-color', colors[randomColor].well);
+				$('.show-quote').css('color', colors[randomColor].well);
 
 				var randomIcon = Math.floor((Math.random() * icons.length));
 
@@ -97,13 +99,15 @@ $( document ).ready(function() {
 
 			$('body').css('background-color', colors[randomColor].body);
 			$('.well').css('background-color', colors[randomColor].well);
+			$('.show-quote').css('border-color', colors[randomColor].well);
+			$('.show-quote').css('color', colors[randomColor].well);
 
 			var randomIcon = Math.floor((Math.random() * icons.length));
 
 			$('.icon-quote').attr('src', 'assets/icons/' + icons[randomIcon]);
 
 			$('.icon-quote').attr('alt', icons[randomIcon]);
-			
+
 
 	    },
 	    error: function(err) { alert(err); },
