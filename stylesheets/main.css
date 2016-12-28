@@ -1,3 +1,37 @@
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display|Open+Sans');
+
+body {
+	background-color: #7FB57E;
+}
+
 .main-content {
 	padding: 60px 15px;
+}
+
+h1 {
+	font-family: 'Playfair Display';
+}
+
+.well {
+	background-color: #4F754E;
+	border: none;
+}
+
+.well blockquote {
+	font-family: 'Open Sans';
+	color: #fff;
+    border: none;
+}
+.quote-content {
+	font-size: 24px;
+}
+
+.quote-author {
+	font-size: 16px;
+	color: #fff;
+
+}
+
+blockquote footer:before {
+	content: "";
 }
