@@ -22,6 +22,28 @@ $( document ).ready(function() {
 		{"body": "#9FDB8F", "well": "#3A8B26"},
 		{"body": "#ADEAFF", "well": "#518EA3"}
 	];
+
+	var icons = [
+		"battery.png", 
+		"bell.png", 
+		"book.png", 
+		"cloud.png", 
+		"compass.png", 
+		"cursor.png", 
+		"edit.png", 
+		"favorites.png", 
+		"flag.png", 
+		"home.png", 
+		"idea.png", 
+		"image.png", 
+		"medal.png", 
+		"microphone.png", 
+		"music.png", 
+		"padlock.png", 
+		"power-button.png", 
+		"speakers.png"
+	];
+
 	$('#showQuote').click(function(){
 		$(".quote-content").empty();
 		$(".quote-author").empty();
@@ -43,6 +65,10 @@ $( document ).ready(function() {
 
 				$('body').css('background-color', colors[randomColor].body);
 				$('.well').css('background-color', colors[randomColor].well);
+
+				var randomIcon = Math.floor((Math.random() * icons.length));
+
+				$('.icon-quote').attr('src', 'assets/icons/' + icons[randomIcon]);
 
 		    },
 		    error: function(err) { alert(err); },
@@ -68,6 +94,10 @@ $( document ).ready(function() {
 
 			$('body').css('background-color', colors[randomColor].body);
 			$('.well').css('background-color', colors[randomColor].well);
+
+			var randomIcon = Math.floor((Math.random() * icons.length));
+
+			$('.icon-quote').attr('src', 'assets/icons/' + icons[randomIcon]);
 
 	    },
 	    error: function(err) { alert(err); },

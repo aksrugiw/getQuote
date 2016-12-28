@@ -21,6 +21,7 @@ h1 {
 	font-family: 'Open Sans';
 	color: #fff;
     border: none;
+    text-align: center;
 }
 .quote-content {
 	font-size: 24px;
@@ -34,4 +35,8 @@ h1 {
 
 blockquote footer:before {
 	content: "";
+}
+
+.icon-quote {
+    margin: 10px auto 30px;
 }
