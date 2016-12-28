@@ -70,6 +70,9 @@ $( document ).ready(function() {
 
 				$('.icon-quote').attr('src', 'assets/icons/' + icons[randomIcon]);
 
+
+				$('.icon-quote').attr('alt', icons[randomIcon]);
+
 		    },
 		    error: function(err) { alert(err); },
 		    beforeSend: function(xhr) {
@@ -98,6 +101,9 @@ $( document ).ready(function() {
 			var randomIcon = Math.floor((Math.random() * icons.length));
 
 			$('.icon-quote').attr('src', 'assets/icons/' + icons[randomIcon]);
+
+			$('.icon-quote').attr('alt', icons[randomIcon]);
+			
 
 	    },
 	    error: function(err) { alert(err); },
